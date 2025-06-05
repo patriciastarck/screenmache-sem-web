@@ -2,7 +2,6 @@ package io.github.patriciastarck.screenmatch.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.patriciastarck.screenmatch.Dadosserie;
 
 public class ConverteDados implements IConverteDados{
     private ObjectMapper mapper = new ObjectMapper();

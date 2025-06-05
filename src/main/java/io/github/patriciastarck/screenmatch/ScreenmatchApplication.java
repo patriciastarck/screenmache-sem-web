@@ -1,7 +1,5 @@
 package io.github.patriciastarck.screenmatch;
 
-import io.github.patriciastarck.screenmatch.service.ConsumoApi;
-import io.github.patriciastarck.screenmatch.service.ConverteDados;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,13 +13,17 @@ public class ScreenmatchApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		var consumoApi = new ConsumoApi();
-		var json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&apikey=c15f4f6e");
-//        System.out.println(json);
-//        json = consumoApi.obterDados("https://coffee.alexflipnote.dev/random.json");
-        System.out.println(json);
-		ConverteDados conversor = new ConverteDados();
-		Dadosserie dados = conversor.obterDados(json, Dadosserie.class);
-		System.out.println(dados);
+		Principal principal = new Principal();
+		principal.exibeMenu();
+
+//		List<DadosTemporada> temporadas = new ArrayList<>();
+//
+//
+//		for (int i = 1; i <= dados.totalTemporadas(); i++) {
+//			json = consumoApi.obterDados("https://www.omdbapi.com/?t=gilmore+girls&season=" + i +"&apikey=c15f4f6e");
+//			DadosTemporada dadosTemporada = conversor.obterDados(json, DadosTemporada.class);
+//			temporadas.add(dadosTemporada);
+//		}
+//		temporadas.forEach(System.out::println);
 	}
 }
